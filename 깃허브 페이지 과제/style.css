@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  background-color: rgb(59, 59, 60);
+}
+
+.up-bar button {
+  color: white;
+  background: none;
+}
+
+.up-left-bar button {
+  border: 0;
+  outline: 0;
+}
+
+.msg {
+  color: white;
+}
