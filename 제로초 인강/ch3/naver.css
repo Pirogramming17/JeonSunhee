@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 /* Cascading Style Sheet */
 /* 선택자 (selector) */
 .blind {
@@ -23,6 +27,7 @@
   height: 52px;
   display: inline-block;
   background: url(./sp_main.png) 1px -320px no-repeat;
+  vertical-align: middle;
 }
 
 #header-search h1 span {
@@ -41,6 +46,14 @@
   height: 50px;
   display: inline-block;
   border: 2px solid #03cf5d;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+#header-search fieldset input {
+  border: none;
+  padding: 0;
+  outline: none;
 }
 
 /* #header-center h1{
