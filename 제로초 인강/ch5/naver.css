@@ -2,9 +2,11 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
   position: 0;
+  font-family: Dotum, "돋움", Helvetica, "Apple SD Gothic Neo", sans-serif;
 }
 
 #fixed {
@@ -29,13 +31,22 @@ body {
   height: 1px;
 }
 
+.relative {
+  position: relative;
+}
+
 .center-align {
   margin: 0 auto;
   width: 1080px;
 }
 
+header {
+  height: 170px;
+}
+
 #header-top {
   float: right;
+  margin-top: 8px;
 }
 
 #header-top span {
@@ -47,6 +58,7 @@ body {
 
 #header-search {
   clear: both;
+  padding-top: 20px;
 }
 
 #header-search a {
@@ -54,14 +66,14 @@ body {
 }
 
 #header-search h1 {
-  /* 자식 태그*/
   width: 222px;
   height: 52px;
   display: inline-block;
   background: url(./sp_search.png) -4px -4px no-repeat;
   vertical-align: middle;
-  position: relative; /* 얘만 맘대로 움직이도록 */
-  top: -6px;
+  position: relative;
+  top: -5px;
+  left: 1px;
 }
 
 #header-search h1 span {
@@ -110,12 +122,19 @@ body {
   width: 21px;
   height: 29px;
   display: inline-block;
-  margin: 14px;
+  margin: 10px;
+}
+
+nav {
+  height: 46px;
+  border-top: 1px solid #f1f3f6;
+  border-bottom: 1px solid #d1d8e4;
 }
 
 nav ul {
+  display: inline-block;
   margin: 0;
-  padding: 0;
+  padding: 16px 0 0 4px;
   list-style: none;
 }
 
@@ -161,6 +180,23 @@ nav li:nth-child(6) span:first-child {
   width: 25px;
   background-position: -70px -285px;
 }
-/* #header-center h1{
-    자손 선택자
-} */
+
+.nav-divider {
+  display: inline-block;
+  margin: 18px 16px 0;
+  width: 1px;
+  height: 14px;
+  background: #ebeef3;
+}
+
+#search-ranking {
+  position: absolute;
+  top: 16px;
+  right: 100px;
+}
+
+#rank-number {
+  margin-top: -9px;
+  color: #00ab33;
+  font-size: 16px;
+}
