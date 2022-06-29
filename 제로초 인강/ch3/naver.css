@@ -56,6 +56,24 @@
   outline: none;
 }
 
+#header-search fieldset button {
+  width: 50px;
+  height: 50px;
+  border: none;
+  padding: 0;
+  background: #03cf5d;
+}
+
+#search-image {
+  background-image: url(./sp_main.png);
+  background-position: -844px -10px;
+  background-repeat: no-repeat;
+  width: 41px;
+  height: 39px;
+  display: inline-block;
+  margin: 5px;
+}
+
 /* #header-center h1{
     자손 선택자
 } */
