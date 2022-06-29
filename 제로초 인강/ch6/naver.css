@@ -299,6 +299,8 @@ main {
   width: 740px;
   height: 120px;
   background: #555;
+  margin-right: 8px;
+  margin-bottom: 8px;
 }
 
 #main-login {
@@ -307,23 +309,32 @@ main {
   height: 120px;
   vertical-align: top;
   background-color: white;
+  margin-bottom: 8px;
 }
 
 #main-ytn {
   display: inline-block;
   width: 740px;
   height: 46px;
+  background-color: white;
+  margin-right: 8px;
+  margin-bottom: 8px;
 }
 
 #main-newsstand {
   display: inline-block;
   width: 740px;
   height: 246px;
+  margin-right: 8px;
+  margin-bottom: 8px;
 }
+
 #main-weather {
   display: inline-block;
   width: 332px;
   height: 142px;
+  background-color: white;
+  margin-bottom: 8px;
 }
 
 #main-second-ad {
@@ -331,6 +342,7 @@ main {
   width: 332px;
   height: 150px;
   background: #555;
+  margin-bottom: 8px;
 }
 
 #main-category {
