@@ -1,32 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap");
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   margin: 0;
   padding: 0;
   width: 1530px;
   height: 745px;
-  border: solid; /* 테두리 지우기 */
 }
 
 main {
-  background-color: rgb(55, 55, 93);
+  background-color: rgb(45, 45, 63);
 }
 #icon {
   font-size: 2em;
 }
 .up-bar {
-  border: solid; /* 테두리 지우기 */
   padding: 20px 100px 10px 100px;
 }
 
 .up-left-bar {
+  color: white;
   display: inline-block;
 }
 
 .up-right-bar {
   display: inline-block;
-  padding: 0 0 0 500px;
+  padding: 0 0 0 400px;
 }
 
 .up-bar button {
@@ -38,11 +37,44 @@ main {
   border: 0;
   outline: 0;
 }
+.up-left-bar a {
+  padding: 0px 5px 0px 5px;
+}
+
+#search {
+  background-color: rgb(169, 168, 168);
+  color: whi;
+  border: none;
+  padding: 5px;
+  outline: none;
+  vertical-align: top;
+  width: 210px;
+  height: 23px;
+  border-radius: 7px;
+}
+input::placeholder {
+  color: white;
+}
+
+#sign-in {
+  width: 70px;
+  height: 30px;
+  border: none;
+  font-size: 15px;
+}
+#sign-up {
+  width: 70px;
+  height: 30px;
+  border-radius: 7px;
+  border-color: white;
+  border-width: 1px;
+  font-size: 15px;
+}
 
 .middle {
-  border: solid;
+  height: 450px;
   margin: 0;
-  padding-bottom: 100px;
+  padding-bottom: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,14 +82,77 @@ main {
 
 .msg {
   color: white;
-  border: solid;
   display: inline-block;
+  width: 500px;
+  padding-right: 10px;
+}
+
+#text1 {
+  font-weight: bold;
+  font-size: 70px;
+  padding-bottom: 10px;
+}
+
+#text2 {
+  color: rgb(166, 165, 165);
+  font-size: 22px;
+}
+.highlight1 {
+  color: white;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
 }
 
 .input-box {
   background-color: white;
   margin: 10px;
   padding: 20px;
-  border: solid;
+  height: 400px;
+  width: 350px;
   display: inline-block;
+  border-radius: 7px;
+}
+
+#username,
+#email,
+#password {
+  width: 340px;
+  height: 30px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  border-color: rgb(202, 198, 198);
+  border-width: 1px;
+}
+
+.highlight2 {
+  color: rgb(15, 163, 249);
+}
+.text3 {
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#sign-up-for {
+  border: none;
+  background-color: rgb(46, 212, 46);
+  color: white;
+  width: 340px;
+  height: 60px;
+  border-radius: 7px;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+#down-bar {
+  width: 1530px;
+  height: 148px;
+  background-image: url("./picture.jpg");
+  background-size: 150px;
+  background-position: 1000px -30px;
+  background-repeat: no-repeat;
+  background-size: 400px;
 }

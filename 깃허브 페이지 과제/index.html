@@ -11,24 +11,24 @@
     <main>
       <div class="up-bar">
         <div class="up-left-bar">
-          <button id="icon">
+          <a id="icon">
             <i class="fa-brands fa-github"></i>
-          </button>
-          <button id="why">
+          </a>
+          <a id="why">
             Why GitHub?
             <i class="fa-solid fa-angle-down"></i>
-          </button>
-          <button id="team">Team</button>
-          <button id="enterprise">enterprise</button>
-          <button id="explore">
+          </a>
+          <a id="team">Team</a>
+          <a id="enterprise">enterprise</a>
+          <a id="explore">
             Explore
             <i class="fa-solid fa-angle-down"></i>
-          </button>
-          <button id="marketplace">Marketplace</button>
-          <button id="pricing">
+          </a>
+          <a id="marketplace">Marketplace</a>
+          <a id="pricing">
             Pricing
             <i class="fa-solid fa-angle-down"></i>
-          </button>
+          </a>
         </div>
         <div class="up-right-bar">
           <input id="search" type="text" placeholder="Search GitHub" />
@@ -42,40 +42,42 @@
           <div id="text1">Built for <br />developers</div>
           <div id="text2">
             GitHub is a development platform inspired by the<br />
-            way you work. From open source to business, you<br />
+            way you work. From <span class="highlight1">open source</span> to
+            <span class="highlight1">business</span>, you<br />
             can host and review code, manage projects, and<br />
             build software alongside 50 million developers.
           </div>
         </div>
         <div class="input-box">
           <div class="username">
-            username
+            <div id="name-text">Username</div>
             <input type="text" id="username" />
           </div>
           <div class="email">
-            Email
+            <div id="email-text">Email</div>
             <input type="text" id="email" />
           </div>
           <div class="password">
-            Password
-            <input type="password" />
+            <div id="password-text">Password</div>
+            <input type="password" id="password" />
           </div>
-          <div id="text3">
+          <div class="text3">
             Make sure it's at least 15 characters OR at least 8 characters
             including a<br />
-            number and a lowercase letter. Learn more.
+            number and a lowercase letter.
+            <span class="highlight2">Learn more.</class>
           </div>
           <button id="sign-up-for">Sign up for GitHub</button>
-          <div id="text4">
-            By clicking "Sign up for GitHub", you agree to our Terms of Service
-            and<br />
-            Privacy Statement. We'll occasionally send you account related
-            emails.
+          <div class="text3">
+            By clicking "Sign up for GitHub", you agree to our
+            <span class="highlight2">Terms of Service</class> and<br />
+            <span class="highlight2">Privacy Statement.</class> We'll occasionally
+            send you account related emails.
           </div>
         </div>
       </div>
     </main>
-    <div class="down-bar"></div>
+    <div id="down-bar"></div>
     <script
       src="https://kit.fontawesome.com/f578b19b63.js"
       crossorigin="anonymous"
