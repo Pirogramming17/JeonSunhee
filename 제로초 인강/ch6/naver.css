@@ -5,13 +5,26 @@
 html,
 body {
   margin: 0;
-  position: 0;
+  padding: 0;
   font-family: Dotum, "돋움", Helvetica, "Apple SD Gothic Neo", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 #fixed {
   position: fixed;
-  top: 50px;
+  bottom: 50px;
   right: 50px;
   display: inline-block;
   width: 100px;
@@ -21,7 +34,7 @@ body {
 }
 
 /* Cascading Style Sheet */
-/* 선택자 (selector) */
+/* 선택자(selector) */
 .blind {
   position: absolute;
   overflow: hidden;
@@ -58,7 +71,7 @@ header {
 
 #header-search {
   clear: both;
-  padding-top: 12px;
+  padding-top: 45px;
 }
 
 #header-search a {
@@ -66,9 +79,12 @@ header {
 }
 
 #header-search h1 {
-  width: 222px;
-  height: 52px;
+  width: 198px;
+  height: 48px;
   display: inline-block;
+  /*background-image: url(./sp_search.png);*/
+  /*background-position: -4px -10px;*/
+  /*background-repeat: no-repeat;*/
   background: url(./sp_search.png) -4px -4px no-repeat;
   vertical-align: middle;
   position: relative;
@@ -85,12 +101,16 @@ header {
 }
 
 #header-search fieldset {
-  margin-left: 20px;
-  padding: 12px 0px 12px 10px;
-  width: 520px;
-  height: 50px;
+  margin-left: 18px;
+  /*padding-top: 12px;*/
+  /*padding-bottom: 12px;*/
+  /*padding-left: 10px;*/
+  /*padding-right: 0;*/
+  padding: 12px 0 12px 10px;
+  width: 521px;
+  height: 49px;
   display: inline-block;
-  border: 2px solid #03cf5d;
+  border: 2px solid #03cf5d; /* hex */
   vertical-align: middle;
   position: relative;
 }
@@ -100,13 +120,13 @@ header {
   padding: 0;
   outline: none;
   vertical-align: top;
-  width: 405px;
+  width: 395px;
   height: 23px;
 }
 
 #header-search fieldset button {
-  width: 50px;
-  height: 50px;
+  width: 49px;
+  height: 49px;
   border: none;
   padding: 0;
   background: #03cf5d;
@@ -175,7 +195,7 @@ nav li span:first-child {
   display: inline-block;
   background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_nav.png);
   background-repeat: no-repeat;
-  margin-left: 14px;
+  margin-left: 10px;
 }
 
 nav li:nth-child(2) span:first-child {
@@ -290,12 +310,17 @@ main {
 }
 
 #main-centered {
-  padding: 8px 10px 0;
+  padding: 8px 10px;
   width: 1100px;
 }
 
-#main-ad {
+#main-first-block {
   display: inline-block;
+  width: 100%;
+}
+
+#main-ad {
+  float: left;
   width: 740px;
   height: 120px;
   background: #555;
@@ -304,12 +329,21 @@ main {
 }
 
 #main-login {
-  display: inline-block;
+  float: left;
   width: 332px;
   height: 120px;
   vertical-align: top;
   background-color: white;
   margin-bottom: 8px;
+}
+
+#main-second-block .inline-block:first-child {
+  width: 740px;
+}
+
+#main-second-block .inline-block:last-child {
+  width: 332px;
+  vertical-align: top;
 }
 
 #main-ytn {
@@ -321,12 +355,44 @@ main {
   margin-bottom: 8px;
 }
 
+#main-ytn h3,
+#main-ytn ol {
+  display: inline-block;
+}
+
 #main-newsstand {
   display: inline-block;
   width: 740px;
   height: 246px;
+  background-color: white;
   margin-right: 8px;
   margin-bottom: 8px;
+}
+
+#main-newsstand h3 {
+  height: 45px;
+  border-bottom: 1px solid #ebeef3;
+}
+
+#main-newsstand ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#main-newsstand li {
+  float: left;
+  width: 123px;
+  height: 67px;
+  border-right: 1px solid #f1f3f6;
+  border-bottom: 1px solid #f1f3f6;
+  text-align: center;
+}
+
+#main-newsstand li img {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #main-weather {
@@ -346,29 +412,39 @@ main {
 }
 
 #main-category {
-  display: inline-block;
+  float: left;
   width: 740px;
   height: 837px;
   background: white;
+  margin-bottom: 8px;
+  margin-right: 8px;
 }
 
 #main-shopping {
-  display: inline-block;
+  float: left;
   width: 332px;
   height: 837px;
   background: white;
+  margin-bottom: 8px;
+}
+
+#main-third-block,
+#main-fourth-block {
+  display: inline-block;
+  width: 100%;
 }
 
 #main-event {
-  display: inline-block;
+  float: left;
   width: 740px;
   height: 130px;
   background: white;
   vertical-align: top;
+  margin-right: 8px;
 }
 
 #main-third-ad {
-  display: inline-block;
+  float: left;
   width: 332px;
   height: 130px;
   background: #555;
