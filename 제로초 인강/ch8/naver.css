@@ -1,31 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Dotum, "돋움", Helvetica, "Apple SD Gothic Neo", sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-}
-
-.inline-block {
-  display: inline-block;
-}
-
-.float-left {
-  float: left;
-}
-
 #fixed {
   position: fixed;
   bottom: 50px;
@@ -429,6 +401,16 @@ main {
   vertical-align: top;
 }
 
+#main-ytn h3,
+#main-newsstand h3 {
+  font-size: 14px;
+  font-family: NanumSquare, Dotum, "돋움", Helvetica, AppleSDGothicNeo,
+    sans-serif;
+  padding-top: 15px;
+  padding-left: 15px;
+  vertical-align: top;
+}
+
 #main-ytn {
   display: inline-block;
   width: 740px;
@@ -498,7 +480,7 @@ main {
 #main-category {
   float: left;
   width: 740px;
-  height: 882px;
+  height: 884px;
   background: white;
   margin-bottom: 8px;
   margin-right: 8px;
@@ -507,7 +489,7 @@ main {
 #main-shopping {
   float: left;
   width: 330px;
-  height: 882px;
+  height: 884px;
   background: white;
   margin-bottom: 8px;
 }
@@ -515,6 +497,10 @@ main {
 #main-shopping iframe {
   width: 100%;
   height: 100%;
+  border: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 #main-third-block,
@@ -540,9 +526,10 @@ main {
   background: #555;
 }
 
-#margin-category-top {
+#main-category-top {
   display: inline-block;
   width: 100%;
+  border-bottom: 1px solid #ebeef3;
 }
 
 #subject-list,
@@ -551,10 +538,22 @@ main {
 #subject-next {
   float: left;
   height: 45px;
+  padding: 0;
 }
 
 #subject-list {
   width: 603px;
+  position: relative;
+}
+
+#subject-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 45px;
+  width: 700px;
 }
 
 #subject-list li {
@@ -594,14 +593,8 @@ main {
   height: 45px;
 }
 
-#subject-all,
-#subject-prev,
-#subject-next {
-  position: relative;
-  width: 45px;
-  background: white;
-  border: none;
-  border-left: 1px solid #ebeef3;
+#subject-all {
+  border-right: 1px solid #ebeef3;
 }
 
 #subject-all,
@@ -645,4 +638,8 @@ main {
   background-image: url(./sp_themecast.png);
   background-repeat: no-repeat;
   background-position: -320px -52px;
+}
+
+section {
+  border: 1px solid #dee3eb;
 }
