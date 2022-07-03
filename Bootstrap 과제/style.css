@@ -1,0 +1,278 @@
+@import url("./reset.css");
+
+.hidden {
+  display: none;
+}
+
+/* header 부분 */
+
+header {
+  position: sticky;
+  top: 0;
+}
+
+/* .container-fluid,
+#header {
+  background-color: #383d3f !important;
+  border-color: #383d3f !important;
+}
+
+#header .navbar {
+  background-color: #383d3f !important;
+  border-color: #383d3f !important;
+} */
+
+/* intro 부분 */
+#intro,
+#highlights {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 696px;
+}
+
+#intro-text {
+  border-bottom: 3px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 85%;
+  margin-top: 350px;
+  padding-bottom: 15px;
+  margin-bottom: 5px;
+}
+#intro-text > h2 {
+  font-weight: bold;
+}
+#intro-text > span {
+  font-weight: bold;
+}
+
+/* highlights 부분 */
+#highlights {
+  background-color: #616971;
+  height: 754px;
+}
+#highlights-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 290px;
+  padding-bottom: 15px;
+  margin-bottom: 5px;
+}
+#highlights-text > h2 {
+  color: red;
+  font-weight: bold;
+  font-size: 40px;
+}
+#highlights-text > span {
+  color: white;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* layout 부분 */
+#layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  padding-top: 60px;
+  background-color: #2a2e2e;
+}
+#layout > h3 {
+  text-align: center;
+  color: #3489f8;
+  width: 94%;
+  border-bottom: #616971 1px solid;
+  padding: 15px;
+  font-size: 25px;
+}
+#layout .col {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+}
+#layout .container .bi {
+  font-weight: bolder;
+  font-size: 130px;
+  height: 70%;
+}
+#layout .co > span {
+  text-align: center;
+  font-size: 10px;
+}
+#layout .row {
+  display: flex;
+  justify-content: space-between !important;
+}
+
+/* gallery 부분 */
+#gallery {
+  padding-top: 60px;
+  background-color: #2a2e2e;
+}
+#gallery .container {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+#gallery .row {
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+#gallery .col img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+}
+#gallery .col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* contact 부분 */
+#contact {
+  padding: 70px 0;
+  background-color: #616971;
+  display: flex;
+  justify-content: center;
+}
+.contact-box {
+  width: 88%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-box > h3 {
+  font-weight: bold;
+  font-size: 30px;
+  padding-bottom: 13px;
+  border-bottom: solid 2px #2a2e2e;
+  width: 100%;
+  text-align: center;
+}
+#input-box input,
+#input-box textarea {
+  border: none;
+}
+#input-box,
+#top-box,
+#bottom-box,
+#bottom-box textarea {
+  width: 100%;
+}
+#top-box {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+#top-box input {
+  width: 32%;
+  height: 35px;
+}
+#input-box .btn {
+  width: 22%;
+  margin: 30px 0 30px;
+}
+#input-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* footer 부분 */
+footer input {
+  width: 100%;
+  margin: 10px 0;
+}
+#copyright {
+  padding-left: 7% !important;
+  font-size: 13px;
+  font-weight: lighter;
+  color: lightgray;
+}
+
+footer > * {
+  text-align: left;
+}
+
+#send-modal h5 {
+  font-weight: bold !important;
+  text-align: center !important;
+}
+
+#about-modal .modal-content {
+  background-color: #2a2e2e !important;
+  color: white;
+}
+#about-modal .about-modal-text {
+  font-size: 13px;
+}
+
+@media (max-width: 992px) {
+  #layout .row {
+    display: flex;
+    flex-direction: column;
+  }
+  #layout .col {
+    margin-bottom: 20px;
+  }
+  .sm-hidden {
+    display: none !important;
+  }
+  .sm-show {
+    display: block;
+  }
+  .toggle-menu {
+    display: flex;
+    justify-content: space-between;
+  }
+  .toggle-menu {
+    padding: 0 10px;
+  }
+  .sm-show > * {
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .toggle-menu .btn {
+    border: none;
+  }
+  .sm-show ul {
+    padding: 0;
+  }
+  .sm-show li {
+    margin: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* gallery 부분 */
+  #gallery .container > .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #gallery .col {
+    width: 80%;
+    margin: 15px;
+  }
+  /* contact 부분 */
+
+  #contact #top-box {
+    display: flex;
+    flex-direction: column;
+  }
+  #top-box input {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  /* footer 부분 */
+}
