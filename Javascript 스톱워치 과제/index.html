@@ -17,11 +17,13 @@
         <div>
           <h3><i class="fa-solid fa-stopwatch"></i>피로그래밍 스톱워치</h3>
           <div id="clock-box">
-            <div id="time"><h3>00:00</h3></div>
+            <div id="time">
+              <h3><span id="sec">00</span>:<span id="mili">00</span></h3>
+            </div>
             <div class="btn-box">
-              <button>start</button>
-              <button>stop</button>
-              <button>reset</button>
+              <button id="start-btn">start</button>
+              <button id="stop-btn">stop</button>
+              <button id="reset-btn">reset</button>
             </div>
           </div>
         </div>
@@ -44,4 +46,6 @@
       </div>
     </main>
   </body>
+
+  <script type="text/javascript" src="./script.js"></script>
 </html>
