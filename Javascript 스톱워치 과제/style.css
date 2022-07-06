@@ -1,0 +1,55 @@
+@import "./reset.css";
+main {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#clock #clock-box {
+  background-color: bisque;
+  padding: 20px;
+  width: 300px;
+  border-radius: 6%;
+  margin: 10px auto;
+}
+
+#clock-box > #time {
+  background-color: white;
+  font-size: 50px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5%;
+}
+.btn-box {
+}
+.btn-box > button {
+  margin: 10px;
+  padding: 13px;
+  background-color: white;
+  border: none;
+  border-radius: 40%;
+}
+
+#record {
+  width: 300px;
+  margin: 10px auto;
+}
+#record input {
+  appearance: auto;
+}
+#record-bar {
+  width: 100%;
+  background-color: antiquewhite;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.records {
+  width: 100%;
+}
+.records > .record {
+  width: 100%;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+}
