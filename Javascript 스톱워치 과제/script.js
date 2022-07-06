@@ -4,6 +4,7 @@ const $resetBtn = document.querySelector("#reset-btn");
 const $records = document.querySelector(".records");
 const $curSec = document.querySelector("#sec");
 const $curMili = document.querySelector("#mili");
+
 var sec = 0;
 var mili = 0;
 var time = 0;
@@ -39,8 +40,8 @@ $stopBtn.addEventListener("click", function () {
     clearInterval(startFunc);
     $records.innerHTML += `
     <div class="record">
-    <input type="checkbox" name="xxx" value="yyy" />
-    <span class="record-time">${String(sec).padStart(2, "0")}:${String(
+        <input type="checkbox" name="check" value="ck"/>
+        <span class="record-time">${String(sec).padStart(2, "0")}:${String(
       mili
     ).padStart(2, "0")}</span>
                 <span></span>
@@ -58,3 +59,46 @@ function init() {
   $curSec.innerHTML = "00";
   $curMili.innerHTML = "00";
 }
+
+const $allCheck = document.getElementById("all-check");
+
+$allCheck.addEventListener("click", function (event) {
+  // 전체 선택
+  var checkboxes = document.getElementsByName("check");
+  var boxLen = checkboxes.length;
+  if (event.target.checked == true) {
+    for (var i = 0; i < boxLen; i++)
+      document.getElementsByName("check")[i].checked = true; //name 을 사용하여 배열 형태로 담아 호출
+  }
+  if (event.target.checked == false) {
+    for (var i = 0; i < boxLen; i++)
+      document.getElementsByName("check")[i].checked = false; //name 을 사용하여 배열 형태로 담아 호출
+  }
+});
+
+const $delBtn = document.querySelector("#delete-btn");
+const $recordList = document.querySelector(".records");
+
+// 삭제 기능
+$delBtn.addEventListener("click", function () {
+  var checkboxes = document.getElementsByName("check");
+  var boxLen = checkboxes.length;
+  var arr = [];
+  for (var i = 0; i < boxLen; i++) {
+    if (document.getElementsByName("check")[i].checked == true) {
+      arr.push(i);
+    }
+  }
+  const rec = $recordList.children;
+  //   for (var i = 0; i < arr.length; i++) {
+  //     if (arr.length > 0) {
+  //       rec[arr[i]].remove();
+  //       console.log(arr[i]);
+  //     }
+  //     // document.getElementsByName("check")[arr[i]].parentElement.remove();
+  //   }
+
+  while (arr) {
+    rec[arr.pop()].remove();
+  }
+});
