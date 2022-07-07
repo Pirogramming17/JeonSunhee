@@ -32,7 +32,8 @@ while num<31:
         if num == 31:
             break
     if num == 31:
-            break        
+        print('playerB win!')
+        break        
     # Player B 부분
     cnt2 = input('부를 숫자의 개수를 입력하세요(1, 2, 3만 입력 가능) :')
 
@@ -52,4 +53,5 @@ while num<31:
         if num == 31:
             break
     if num == 31:
-            break        
+        print('playerA win!')
+        break        
