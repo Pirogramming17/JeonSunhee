@@ -13,8 +13,7 @@ def isValid(x):
 
 # 게임 함수
 def brGame(player, num):
-
-    if player == 'player': 
+    if player == 'player': # 사람이라면, 직접 입력 받는다
         cnt = input('부를 숫자의 개수를 입력하세요(1, 2, 3만 입력 가능) :')
 
         # 제대로 입력받을 때까지 반복
@@ -24,7 +23,7 @@ def brGame(player, num):
             else:
                 print('1,2,3 중 하나를 입력하세요')
             cnt = input('부를 숫자의 개수를 입력하세요(1, 2, 3만 입력 가능) :')
-    else:
+    else: # 컴퓨터라면, 랜덤 값 할당
         cnt = random.randint(1,3)
 
     cnt = int(cnt)
@@ -33,7 +32,7 @@ def brGame(player, num):
         num+=1
         print(player,num)
         if num == 31:
-            return 999
+            return 999 # 게임 끝
     return num
 
 # 반복 실행    
