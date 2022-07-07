@@ -1,6 +1,5 @@
 num = 0
 
-
 # 입력값 유효성 검사 함수
 def isValid(x):
     try:
@@ -11,9 +10,8 @@ def isValid(x):
     except ValueError:
         return 3
 
-
-while num<31:
-
+# 게임 함수
+def brGame(player, num):
     cnt = input('부를 숫자의 개수를 입력하세요(1, 2, 3만 입력 가능) :')
 
     # 제대로 입력받을 때까지 반복
@@ -28,30 +26,19 @@ while num<31:
 
     for i in range(cnt):
         num+=1
-        print("PlayerA :", num)
+        print(player, ':',num)
         if num == 31:
+            return 999
+    return num
+    
+# 반복 실행    
+players = ['playerA','playerB']
+num = 0
+while num < 31:
+    for player in players:
+        num = brGame(player,num)
+        if num == 999: # 게임이 끝났다면
+            players.remove(player)
+            print(players.pop(), "win!")
             break
-    if num == 31:
-        print('playerB win!')
-        break        
-    # Player B 부분
-    cnt2 = input('부를 숫자의 개수를 입력하세요(1, 2, 3만 입력 가능) :')
 
-    # 제대로 입력받을 때까지 반복
-    while (isValid(cnt2) != 1):
-        if isValid(cnt2) == 3:
-            print('정수를 입력하세요')
-        else:
-            print('1,2,3 중 하나를 입력하세요')
-        cnt2 = input('부를 숫자의 개수를 입력하세요(1, 2, 3만 입력 가능) :')
-
-    cnt2 = int(cnt2)
-
-    for i in range(cnt2):
-        num+=1
-        print("PlayerB :", num)
-        if num == 31:
-            break
-    if num == 31:
-        print('playerA win!')
-        break        
