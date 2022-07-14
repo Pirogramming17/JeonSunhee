@@ -57,3 +57,6 @@ def update(request, id):
     }
     return render(request, template_name="posts/update.html", context=context)
     
+def delete(request, id):
+    Post.objects.filter(id=id).delete()
+    return redirect("/")
