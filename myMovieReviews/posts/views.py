@@ -1,3 +1,4 @@
+from multiprocessing import context
 from turtle import title
 from django.shortcuts import redirect, render
 from .models import Post
@@ -29,4 +30,10 @@ def create(request):
 
     return render(request, template_name="posts/create.html", context=context)
 
+def detail(request, id):
+    post = Post.objects.get(id=id)
+    context = {
+        "post":post
+    }
+    return render(request, template_name="posts/detail.html", context=context)
 
