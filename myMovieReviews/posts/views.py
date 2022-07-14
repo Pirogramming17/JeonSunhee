@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from turtle import title
+from django.shortcuts import redirect, render
 from .models import Post
 
 # Create your views here.
@@ -9,3 +10,23 @@ def home(request):
         "posts":posts
     }
     return render(request, template_name="posts/home.html", context=context)
+
+def create(request):
+    if request.method == 'POST':
+        title = request.POST["title"]
+        year = request.POST["year"]
+        actor = request.POST["actor"]
+        genre = request.POST["genre"]
+        star = request.POST["star"]
+        review = request.POST["review"]
+        director = request.POST["director"]
+        running = request.POST["running"]
+
+        Post.objects.create(title=title, year=year, actor=actor, genre=genre, star=star, review=review, director=director, running=running)
+        return redirect("/")
+
+    context = {}
+
+    return render(request, template_name="posts/create.html", context=context)
+
+
