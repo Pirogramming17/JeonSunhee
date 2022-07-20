@@ -3,6 +3,20 @@
   <p><strong>Idea List</strong></p>
   <p>나의 아이디어를 잊지 말고 기록해보세요</p>
 </div>
-<div class="idea-boxes"></div>
+<div class="idea-boxes">
+  {% for post in posts %}
+  <div class="box">
+    {% if post.image %}
+    <p>
+      <img src="{{post.image.url}}" />
+    </p>
+    {% endif %}
+    <p>{{post.title}}</p>
+    <div class="line"></div>
+    <p>예상 개발 툴 : {{post.devtool.name}}</p>
+    <p>아이디어 관심도 : {{post.interest}}</p>
+  </div>
+  {% endfor %}
+</div>
 
-{% endblock %} {% block title %} My Idea Site {% endblock %}
+{% endblock %} {% block title %} My SW Idea {% endblock %}
