@@ -1,0 +1,43 @@
+.dev-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info > h2 {
+  color: rgb(183, 249, 227);
+  font-size: 30px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+.info-des {
+  color: white;
+  font-size: 13px;
+  border-left: solid rgb(183, 249, 227) 3px;
+  padding: 13px 8px;
+}
+.info-des > p {
+  margin: 5px 0;
+}
+.info,
+.make-list {
+  width: 95%;
+}
+.make-list {
+  border-top: solid thin white;
+  margin: 20px 0;
+}
+.list-title {
+  color: rgb(183, 249, 227);
+  font-weight: bold;
+  font-size: 14px;
+  margin: 13px 0;
+}
+.sw-list > a {
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+}
+.sw-list {
+  margin: 10px 0;
+}

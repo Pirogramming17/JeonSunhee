@@ -8,7 +8,7 @@
 <div class="dev-list">
   {% for tool in devtools %}
   <div class="dev-tool">
-    <div class="dev-name">{{tool.name}}</div>
+    <div class="dev-name"><a href="/devtool/{{tool.id}}">{{tool.name}}</a></div>
     <div class="dev-kind">{{tool.kind}}</div>
     <div class="dev-des">{{tool.descript}}</div>
   </div>

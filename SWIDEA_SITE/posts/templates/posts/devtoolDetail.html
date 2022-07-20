@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="nav-bar">
+  <p><strong>DevTool Detail</strong></p>
+  <p>
+    개발툴 세부내용 페이지 입니다. 자신이 다룰 수 있는 개발툴에 대한 상세내용을
+    확인해 보아요.
+  </p>
+</div>
+<div class="idea-detail-box dev-detail">
+  <div class="info">
+    <h2>{{devtool.name}}</h2>
+    <div class="info-des">
+      <p>{{devtool.kind}}</p>
+      <p>{{devtool.descript}}</p>
+    </div>
+  </div>
+  {% if all_post %}
+  <div class="make-list">
+    <p class="list-title">&gt; 만들 수 있는 SW 목록</p>
+    {% for sw in all_post %}
+    <p class="sw-list"><a href="/post/idea/{{sw.id}}">{{sw.title}}</a></p>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+<div class="box-btns">
+  <a href="/devtoolDelete/{{devtool.id}}" class="delete-btn">삭제</a>
+  <a href="/devList" class="list-btn">목록</a>
+  <a href="/devtool/devtoolUpdate/{{devtool.id}}" class="update-btn">수정</a>
+</div>
+{% endblock %} {% block title %} {{devtool.name}} {% endblock %}

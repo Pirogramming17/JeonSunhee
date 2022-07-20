@@ -26,8 +26,8 @@
   </div>
 </div>
 <div class="box-btns">
-  <a href="/ideaDelete" class="delete-btn">삭제</a>
+  <a href="/ideaDelete/{{post.id}}" class="delete-btn">삭제</a>
   <a href="/" class="list-btn">목록</a>
   <a href="/post/ideaUpdate/{{post.id}}" class="update-btn">수정</a>
 </div>
-{% endblock %} {% block title %} Create Idea {% endblock %}
+{% endblock %} {% block title %} {{post.title}} {% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block content %}
+<div class="nav-bar">
+  <p><strong>DevTool Detail Update</strong></p>
+  <p>
+    개발툴 세부내용 수정 페이지 입니다. 개발툴에 대해 수정사항이 있으면
+    고쳐보아요.
+  </p>
+</div>
+<div class="idea-input">
+  <form action="/devtool/devtoolUpdate/{{devtool.id}}" method="POST">
+    {% csrf_token %}
+    <div class="input-box">
+      <p>이름:</p>
+      <input type="text" name="name" value="{{devtool.name}}" />
+    </div>
+    <div class="input-box">
+      <p>종류:</p>
+      <input type="text" name="kind" value="{{devtool.kind}}" />
+    </div>
+    <div class="input-box">
+      <p>개발툴 설명:</p>
+      <textarea name="descript" id="" cols="30" rows="10">
+{{devtool.descript}}</textarea
+      >
+    </div>
+    <div class="submit-btn">
+      <input type="submit" value="SUBMIT" />
+    </div>
+  </form>
+</div>
+{% endblock %} {% block title %} DevTool Detail Update {% endblock %}

@@ -52,7 +52,7 @@ def ideaUpdate(request, id):
         devtool = Devtool.objects.get(name=request.POST["devtool"])
 
         Post.objects.filter(id=id).update(title=title, image=req_image, content=content, interest=interest, devtool=devtool)
-        return redirect(f"/post/{id}")
+        return redirect(f"/post/idea/{id}")
     post = Post.objects.get(id=id)
     devtool = Devtool.objects.all()
     myTool = post.devtool.name
@@ -80,3 +80,32 @@ def devtoolCreate(request):
         return redirect("/")
     
     return render(request, template_name="posts/devtoolCreate.html")
+
+def devtoolUpdate(request, id):
+    if request.method == "POST":
+        name = request.POST["name"]
+        kind = request.POST["kind"]
+        descript = request.POST["descript"]
+
+        Devtool.objects.filter(id=id).update(name=name, kind=kind, descript=descript)
+        return redirect(f"/devtool/{id}")
+    devtool = Devtool.objects.get(id=id)
+    context = {
+        "devtool":devtool,
+    }
+    return render(request, template_name="posts/devtoolUpdate.html", context=context)
+
+def devtoolDetail(request, id):
+    devtool = Devtool.objects.get(id=id)
+    # user = post.user
+    all_post = devtool.post_devtool.all()
+    
+    context = {
+        "devtool":devtool,
+        "all_post":all_post
+    }
+    return render(request, template_name="posts/devtoolDetail.html", context=context)
+
+def devtoolDelete(request, id):
+    Devtool.objects.filter(id=id).delete()
+    return redirect("/devList")
