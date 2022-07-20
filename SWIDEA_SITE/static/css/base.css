@@ -1,0 +1,40 @@
+@import url("./reset.css");
+
+body {
+  background-color: black;
+}
+nav {
+  padding: 25px 60px 10px 60px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid gray thin;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+}
+strong {
+  color: greenyellow;
+  font-family: "Oswald", sans-serif;
+}
+.nav-left > a {
+  font-family: "Oswald", sans-serif;
+}
+.nav-right > a {
+  font-family: "Dongle", sans-serif;
+  font-size: 25px;
+  margin-left: 7rem;
+}
+.nav-right {
+  margin-left: 10%;
+}
+main {
+  display: flex;
+  justify-content: space-around;
+}
+.container {
+  margin-top: 30px;
+  background-color: lightgray;
+  width: 70rem;
+  height: 39rem;
+}

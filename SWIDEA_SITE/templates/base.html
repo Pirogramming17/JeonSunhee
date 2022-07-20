@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- {% load static %} -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dongle&family=Oswald:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="{% static 'css/base.css' %}" /> -->
+    <link rel="stylesheet" href="../../../static/css/base.css" />
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <a href="#">My <strong>SW Idea</strong> Manage</a>
+      </div>
+      <div class="nav-right">
+        <a href="#">아이디어 등록</a>
+        <a href="#">아이디어 관리</a>
+        <a href="#">개발툴 등록</a>
+        <a href="#">개발툴 관리</a>
+      </div>
+    </nav>
+    <main>
+      <div class="container">{% block content %} {% endblock %}</div>
+    </main>
+  </body>
+</html>
