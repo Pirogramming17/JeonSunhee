@@ -29,3 +29,9 @@
 .input-box > p {
   margin: 9px 0;
 }
+.submit-btn > input[type="submit"] {
+  color: white;
+  background: none;
+  border: solid thin white;
+  border-radius: 7px;
+}

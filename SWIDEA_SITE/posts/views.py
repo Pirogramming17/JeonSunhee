@@ -43,4 +43,24 @@ def ideaDelete(request, id):
     Post.objects.filter(id=id).delete()
     return redirect("/")
 
+def ideaUpdate(request, id):
+    if request.method == "POST":
+        title = request.POST["title"]
+        req_image = request.FILES["image"]
+        content = request.POST["content"]
+        interest = request.POST["interest"]
+        devtool = Devtool.objects.get(name=request.POST["devtool"])
+
+        Post.objects.filter(id=id).update(title=title, image=req_image, content=content, interest=interest, devtool=devtool)
+        return redirect(f"/post/{id}")
+    post = Post.objects.get(id=id)
+    devtool = Devtool.objects.all()
+    myTool = post.devtool.name
+    context = {
+        "post":post,
+        "devtool":devtool,
+        "myTool":myTool
+    }
+    return render(request, template_name="posts/ideaUpdate.html", context=context)
+
 
