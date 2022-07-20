@@ -34,4 +34,6 @@
   background: none;
   border: solid thin white;
   border-radius: 7px;
+  padding: 3px 10px;
+  margin: 0 auto;
 }

@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="nav-bar">
+  <p><strong>DevTool Register</strong></p>
+  <p>개발툴 등록 페이지 입니다. 자신이 다룰 수 있는 개발툴을 등록해보세요.</p>
+</div>
+<div class="idea-input">
+  <form action="/devtoolCreate" method="POST">
+    {% csrf_token %}
+    <div class="input-box">
+      <p>이름:</p>
+      <input type="text" name="name" />
+    </div>
+    <div class="input-box">
+      <p>종류:</p>
+      <input type="text" name="kind" />
+    </div>
+    <div class="input-box">
+      <p>개발툴 설명:</p>
+      <textarea name="descript" id="" cols="30" rows="10"></textarea>
+    </div>
+    <div class="submit-btn">
+      <input type="submit" value="SUBMIT" />
+    </div>
+  </form>
+</div>
+{% endblock %} {% block title %} Create DevTool {% endblock %}

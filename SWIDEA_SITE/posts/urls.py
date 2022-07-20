@@ -14,7 +14,7 @@ urlpatterns = [
     path('post/idea/<int:id>',views.ideaDetail, name="ideaDetail"),
     path('post/ideaUpdate/<int:id>', views.ideaUpdate, name="ideaUpdate"),
     path('devList', views.devtoolList, name="devtoolList"),
-    # path('devtoolCreate')
+    path('devtoolCreate', views.devtoolCreate, name="devtoolCreate"),
     
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

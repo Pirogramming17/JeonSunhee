@@ -69,3 +69,14 @@ def devtoolList(request):
         "devtools":devtools
     }
     return render(request, template_name="posts/devtoolList.html", context=context)
+
+def devtoolCreate(request):
+    if request.method == "POST":
+        name = request.POST["name"]
+        kind = request.POST["kind"]
+        descript = request.POST["descript"]
+
+        Devtool.objects.create(name=name, kind=kind, descript=descript)
+        return redirect("/")
+    
+    return render(request, template_name="posts/devtoolCreate.html")
