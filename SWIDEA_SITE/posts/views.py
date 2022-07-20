@@ -6,7 +6,13 @@ from .models import Post, Devtool
 
 # Create your views here.
 def main(request):
-    posts = Post.objects.all()
+    order = request.GET.get('order')
+    if order == "latest":
+        posts = Post.objects.all().order_by('-created_at')
+    elif order == 'named':
+        posts = Post.objects.all().order_by('title')
+    else:
+        posts = Post.objects.all().order_by('created_at')
 
     context = {
         "posts":posts

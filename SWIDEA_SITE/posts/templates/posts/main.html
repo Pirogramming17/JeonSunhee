@@ -3,6 +3,14 @@
   <p><strong>Idea List</strong></p>
   <p>나의 아이디어를 잊지 말고 기록해보세요</p>
 </div>
+<form class="order" method="GET">
+  <select name="order" onchange="this.form.submit()">
+    <option value="none">--정렬기준--</option>
+    <option value="register">등록순</option>
+    <option value="latest">최신순</option>
+    <option value="named">이름순</option>
+  </select>
+</form>
 <div class="idea-boxes">
   {% for post in posts %}
   <div class="box">
@@ -14,7 +22,12 @@
     <p><a href="/post/idea/{{post.id}}">{{post.title}}</a></p>
     <div class="line"></div>
     <p>예상 개발 툴 : {{post.devtool.name}}</p>
-    <p>아이디어 관심도 : {{post.interest}}</p>
+    <p class="idea-interest">
+      아이디어 관심도 :
+      <button class="plus-btn">+</button>
+      <span class="interest">{{post.interest}}</span
+      ><button class="minus-btn">-</button>
+    </p>
   </div>
   {% endfor %}
 </div>
