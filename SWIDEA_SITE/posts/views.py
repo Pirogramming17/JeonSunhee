@@ -63,4 +63,9 @@ def ideaUpdate(request, id):
     }
     return render(request, template_name="posts/ideaUpdate.html", context=context)
 
-
+def devtoolList(request):
+    devtools = Devtool.objects.all()
+    context = {
+        "devtools":devtools
+    }
+    return render(request, template_name="posts/devtoolList.html", context=context)

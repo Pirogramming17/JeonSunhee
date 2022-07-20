@@ -1,0 +1,27 @@
+.dev-list {
+  margin: 50px auto;
+  border-bottom: solid white thin;
+  width: 85%;
+}
+.dev-tool {
+  display: flex;
+  padding: 15px 40px;
+  border-top: solid white thin;
+}
+.dev-name {
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+  width: 10%;
+}
+.dev-kind {
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  width: 25%;
+}
+.dev-des {
+  color: black;
+  font-size: 12px;
+  margin: 0 20px;
+}
