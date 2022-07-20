@@ -39,9 +39,11 @@ def ideaCreate(request):
 def ideaDetail(request, id):
     post = Post.objects.get(id=id)
     devtool = post.devtool.name
+    devId = post.devtool.id
     context = {
         "post":post,
-        "devtool":devtool
+        "devtool":devtool,
+        "devId":devId
     }
     return render(request, template_name="posts/ideaDetail.html", context=context)
 
