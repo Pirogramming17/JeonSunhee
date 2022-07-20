@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="nav-bar">
+  <p><strong>Idea Detail</strong></p>
+  <p>
+    아이디어 세부내용 페이지입니다. 당신이 구현하려 한 아이디어들을 자세히
+    살펴보세요.
+  </p>
+</div>
+<div class="idea-detail-box">
+  <div class="image-box"><img src="{{post.image.url}}" /></div>
+  <div class="text-box">
+    <h2><strong>{{post.title}} </strong>⭐</h2>
+    <div>
+      <p>1) 아이디어 관심도</p>
+      <p>{{post.interest}}</p>
+    </div>
+    <div>
+      <p>2) 예상 개발 툴</p>
+      <p><strong>{{devtool}}</strong></p>
+    </div>
+    <div>
+      <p>3) 아이디어 설명</p>
+      <p>{{post.content}}</p>
+    </div>
+  </div>
+</div>
+<div class="box-btns">
+  <a href="/ideaDelete" class="delete-btn">삭제</a>
+  <a href="/" class="list-btn">목록</a>
+  <a href="/" class="update-btn">수정</a>
+</div>
+{% endblock %} {% block title %} Create Idea {% endblock %}

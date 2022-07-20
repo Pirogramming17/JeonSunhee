@@ -1,4 +1,5 @@
 from multiprocessing import context
+from re import template
 from unicodedata import name
 from django.shortcuts import redirect, render
 from .models import Post, Devtool
@@ -18,7 +19,6 @@ def ideaCreate(request):
         req_image = request.FILES["image"]
         content = request.POST["content"]
         interest = request.POST["interest"]
-        # devtool = request.POST["devtool"]
         devtool = Devtool.objects.get(name=request.POST["devtool"])
 
         Post.objects.create(title=title, image=req_image, content=content, interest=interest, devtool=devtool)
@@ -29,4 +29,18 @@ def ideaCreate(request):
         'devtool' : devtool
     }
     return render(request, template_name="posts/ideaCreate.html", context=context)
+
+def ideaDetail(request, id):
+    post = Post.objects.get(id=id)
+    devtool = post.devtool.name
+    context = {
+        "post":post,
+        "devtool":devtool
+    }
+    return render(request, template_name="posts/ideaDetail.html", context=context)
+
+def ideaDelete(request, id):
+    Post.objects.filter(id=id).delete()
+    return redirect("/")
+
 

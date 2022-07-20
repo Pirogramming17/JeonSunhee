@@ -1,0 +1,57 @@
+.idea-detail-box {
+  display: flex;
+  align-items: center;
+  border: solid thin white;
+  width: 85%;
+  margin: 0 auto;
+  height: 55%;
+}
+.idea-detail-box .text-box {
+  color: white;
+  font-size: 13px;
+}
+.idea-detail-box .text-box h2 {
+  font-size: 23px;
+  font-weight: bold;
+}
+.image-box > img {
+  width: 20rem;
+  height: 20rem;
+  object-fit: fill;
+  margin: 0 50px 0 30px;
+}
+.idea-detail-box .text-box > div {
+  margin: 40px 0;
+}
+.idea-detail-box .text-box > div > p {
+  margin: 6px 0;
+}
+.idea-detail-box strong {
+  color: rgb(183, 249, 227);
+  font-weight: bold;
+}
+.box-btns {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  margin: 40px auto;
+}
+.delete-btn,
+.list-btn,
+.update-btn {
+  text-decoration: none;
+  padding: 7px 15px;
+  border-radius: 8px;
+}
+.delete-btn {
+  color: white;
+  background-color: red;
+}
+.list-btn {
+  color: black;
+  background-color: white;
+}
+.update-btn {
+  color: white;
+  background-color: skyblue;
+}
