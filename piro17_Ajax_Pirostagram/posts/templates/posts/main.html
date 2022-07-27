@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax_Pirostagram</title>
+    <script
+      src="https://kit.fontawesome.com/f578b19b63.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav>
+      <h1>Instagram</h1>
+    </nav>
+    <main>
+      {% for post in posts %}
+      <div class="post-part">
+        <div class="pic">사진</div>
+        <div class="heart-btn post_like" onclick="onClickLike({{post.id}})">
+          {% if post.like == True %}
+          <i class="fa-solid fa-heart" id="heart" style="color: red"></i>
+          {% else %}
+          <i class="fa-solid fa-heart" id="heart" style="color: gray"></i>
+          {% endif %}
+        </div>
+        <!-- <div class="reply">
+          {% for reply in replys %}
+          <div class="rep">
+            <div class="rep-second">{{reply.content}}</div>
+            <div class="rep-del"><a href="">DEL</a></div>
+          </div>
+          {% endfor %}
+        </div> -->
+
+        <div id="reply-form">
+          <form action="/" method="POST">
+            <textarea name="" id="rep-wt" cols="30" rows="10"></textarea>
+            <input type="submit" value="댓글" />
+          </form>
+        </div>
+      </div>
+      {% endfor %}
+    </main>
+    <script>
+      const requestLike = new XMLHttpRequest();
+
+      const onClickLike = (id) => {
+        const url = "/like_ajax/";
+        requestLike.open("POST", url, true);
+        requestLike.setRequestHeader(
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        );
+        requestLike.send(JSON.stringify({ id: id }));
+      };
+
+      requestLike.onreadystatechange = () => {
+        if (requestLike.readyState === XMLHttpRequest.DONE) {
+          if (requestLike.status < 400) {
+            const { id } = JSON.parse(requestLike.response);
+            const element = document.querySelector("#heart");
+            const ele = document.querySelector(".post_like");
+            var color = element.style.color;
+            console.log(color);
+            if (color === "gray") {
+              element.style.color = "red";
+            } else {
+              element.style.color = "gray";
+            }
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
