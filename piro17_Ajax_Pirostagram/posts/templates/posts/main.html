@@ -30,7 +30,7 @@
           <div class="rep rep-id-{{ reply.id }}">
             <div class="rep-second">{{reply.content}}</div>
             <div class="rep-del" onclick="onClickDelete({{reply.id}})">
-              <a href="/delete">DEL</a>
+              <a>삭제버튼</a>
             </div>
           </div>
           {% endfor %}
@@ -39,7 +39,7 @@
         <div id="reply-form">
           <form action="/" method="POST">
             <textarea name="content" id="rep-wt" cols="30" rows="10"></textarea>
-            <a onclick="onClickRep()">댓글</a>
+            <a onclick="onClickRep()">댓글다는버튼</a>
           </form>
         </div>
       </div>
@@ -111,12 +111,12 @@
       requestRep.onreadystatechange = () => {
         if (requestRep.readyState === XMLHttpRequest.DONE) {
           if (requestRep.status < 400) {
-            const { content } = JSON.parse(requestRep.response);
+            const { content, id } = JSON.parse(requestRep.response);
             const ele = document.querySelector(`.reply`);
-            ele.innerHTML += `<div class="rep rep-id-{{ reply.id }}">
+            ele.innerHTML += `<div class="rep rep-id-${id}">
             <div class="rep-second">${content}</div>
-            <div class="rep-del" onclick="onClickDelete({{reply.id}})">
-              <a href="/delete">DEL</a>
+            <div class="rep-del" onclick="onClickDelete(${id})">
+              <a>삭제버튼</a>
             </div>
           </div>`;
             const elev = document.getElementById("rep-wt");

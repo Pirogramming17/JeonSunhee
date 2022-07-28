@@ -9,19 +9,6 @@ from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt
 def main(request):
-    # if request.method == "POST":
-    #     content = request.POST["content"]
-    #     Reply.objects.create(content=content)
-
-    #     posts = Post.objects.all()
-    #     replys = Reply.objects.all()
-    #     context = {
-    #         'posts' : posts,
-    #         'replys' : replys,
-    #     }
-
-    #     return render(request, 'posts/main.html', context=context)
-
     posts = Post.objects.all()
     replys = Reply.objects.all()
     context = {
@@ -62,6 +49,7 @@ def write(request):
     req_content = req['content']
 
     Reply.objects.create(content=req_content)
+    new = Reply.objects.last()
 
-    return JsonResponse({'content' : req_content})
+    return JsonResponse({'content' : req_content , 'id' : new.id})
 
