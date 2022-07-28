@@ -9,11 +9,18 @@ from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt
 def main(request):
-    if request.method == "POST":
-        content = request.POST.get("content", False)
+    # if request.method == "POST":
+    #     content = request.POST["content"]
+    #     Reply.objects.create(content=content)
 
-        Reply.objects.create(content=content)
-        return redirect('/')
+    #     posts = Post.objects.all()
+    #     replys = Reply.objects.all()
+    #     context = {
+    #         'posts' : posts,
+    #         'replys' : replys,
+    #     }
+
+    #     return render(request, 'posts/main.html', context=context)
 
     posts = Post.objects.all()
     replys = Reply.objects.all()
@@ -39,5 +46,22 @@ def like_ajax(request):
     
     return JsonResponse({'id' : post_id})
 
-    
+@csrf_exempt
+def delete(request):
+    req = json.loads(request.body)
+    reply_id = req['id']
+
+    r = Reply.objects.get(id=reply_id)
+    r.delete()
+
+    return JsonResponse({'id' : reply_id})
+
+@csrf_exempt
+def write(request):
+    req = json.loads(request.body)
+    req_content = req['content']
+
+    Reply.objects.create(content=req_content)
+
+    return JsonResponse({'content' : req_content})
 

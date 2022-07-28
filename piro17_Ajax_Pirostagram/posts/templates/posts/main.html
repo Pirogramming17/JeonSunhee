@@ -25,19 +25,21 @@
           <i class="fa-solid fa-heart" id="heart" style="color: gray"></i>
           {% endif %}
         </div>
-        <!-- <div class="reply">
+        <div class="reply">
           {% for reply in replys %}
-          <div class="rep">
+          <div class="rep rep-id-{{ reply.id }}">
             <div class="rep-second">{{reply.content}}</div>
-            <div class="rep-del"><a href="">DEL</a></div>
+            <div class="rep-del" onclick="onClickDelete({{reply.id}})">
+              <a href="/delete">DEL</a>
+            </div>
           </div>
           {% endfor %}
-        </div> -->
+        </div>
 
         <div id="reply-form">
           <form action="/" method="POST">
-            <textarea name="" id="rep-wt" cols="30" rows="10"></textarea>
-            <input type="submit" value="댓글" />
+            <textarea name="content" id="rep-wt" cols="30" rows="10"></textarea>
+            <a onclick="onClickRep()">댓글</a>
           </form>
         </div>
       </div>
@@ -69,6 +71,56 @@
             } else {
               element.style.color = "gray";
             }
+          }
+        }
+      };
+      // 댓글 삭제
+      const requestDel = new XMLHttpRequest();
+      const onClickDelete = (id) => {
+        const url = "/delete/";
+        requestDel.open("POST", url, true);
+        requestDel.setRequestHeader(
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        );
+        requestDel.send(JSON.stringify({ id: id }));
+      };
+
+      requestDel.onreadystatechange = () => {
+        if (requestDel.readyState === XMLHttpRequest.DONE) {
+          if (requestDel.status < 400) {
+            const { id } = JSON.parse(requestDel.response);
+            const ele = document.querySelector(`.rep-id-${id}`);
+            ele.remove();
+          }
+        }
+      };
+      // 댓글 추가
+      const requestRep = new XMLHttpRequest();
+      const onClickRep = () => {
+        const url = "/write/";
+        requestRep.open("POST", url, true);
+        requestRep.setRequestHeader(
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        );
+        const ele = document.getElementById("rep-wt").value;
+        requestRep.send(JSON.stringify({ content: ele }));
+      };
+
+      requestRep.onreadystatechange = () => {
+        if (requestRep.readyState === XMLHttpRequest.DONE) {
+          if (requestRep.status < 400) {
+            const { content } = JSON.parse(requestRep.response);
+            const ele = document.querySelector(`.reply`);
+            ele.innerHTML += `<div class="rep rep-id-{{ reply.id }}">
+            <div class="rep-second">${content}</div>
+            <div class="rep-del" onclick="onClickDelete({{reply.id}})">
+              <a href="/delete">DEL</a>
+            </div>
+          </div>`;
+            const elev = document.getElementById("rep-wt");
+            elev.value = "";
           }
         }
       };
